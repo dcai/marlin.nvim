@@ -391,23 +391,22 @@ marlin.setup = function(opts)
     marlin.load_project_files()
 
     marlin.last = 1
-
-    local augroup = vim.api.nvim_create_augroup("marlin", {})
-    vim.api.nvim_create_autocmd({ "CursorMoved", "BufLeave" }, {
-        group = augroup,
-        pattern = "*",
-        callback = function(ev)
-            update_location(marlin, ev.event)
-        end,
-    })
-
-    vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
-        group = augroup,
-        pattern = "*",
-        callback = function(_)
-            marlin.save()
-        end,
-    })
+    -- local augroup = vim.api.nvim_create_augroup("marlin", {})
+    -- vim.api.nvim_create_autocmd({ "CursorMoved", "BufLeave" }, {
+    --     group = augroup,
+    --     pattern = "*",
+    --     callback = function(ev)
+    --         update_location(marlin, ev.event)
+    --     end,
+    -- })
+    --
+    -- vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
+    --     group = augroup,
+    --     pattern = "*",
+    --     callback = function(_)
+    --         marlin.save()
+    --     end,
+    -- })
 end
 --- Sort indexes
 ---
